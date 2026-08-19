@@ -2,155 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact | Alex Schnell for PA-3</title>
+  <title>Contact | Constitutional Restoration Project</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Get in touch with Alex Schnell's campaign for Pennsylvania’s 3rd District. We prioritize transparency and open communication.">
-  <link rel="canonical" href="https://alexschnellpa3.com/contact.html">
-
-  <meta property="og:title" content="Contact | Alex Schnell for PA-3">
-  <meta property="og:description" content="Representation begins with listening. Share your ideas and concerns with our campaign.">
-  <meta property="og:image" content="https://alexschnellpa3.com/images/alex-schnell-placeholder.jpg">
-  <meta property="og:url" content="https://alexschnellpa3.com/contact.html">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" href="/images/favicon.png">
-  <link rel="apple-touch-icon" href="/images/favicon.png">
-	
+  <meta name="description" content="A civic contact page for sharing ideas, questions, and structural concerns. Built openly and collaboratively.">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Inline styles to ensure layout matches your structure without external CSS dependencies */
-    .contact-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; }
-    @media (min-width: 768px) { .contact-grid { grid-template-columns: 1.2fr 0.8fr; } }
-    .form-group { margin-bottom: 1rem; }
-    .form-group label { display: block; margin-bottom: 0.3rem; font-weight: bold; }
-    .form-group input, .form-group textarea { 
-      width: 100%; padding: 0.6rem; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; 
-    }
-    .participation-list { list-style: none; padding: 0; }
-    .participation-list li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
-    .participation-list li::before { content: "•"; position: absolute; left: 0; color: #2563eb; font-weight: bold; }
-    .sidebar-box { background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 8px; }
-    #submitBtn { 
-      background: #1e40af; color: white; padding: 0.8rem 1.5rem; border: none; 
-      border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; 
-    }
-    #submitBtn:hover { background: #1e3a8a; }
-  </style>
 </head>
 <body>
 
 <header>
-  <h1>Contact the Campaign</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="constitution.html">The Constitution</a>
-    <a href="pocketbook.html">Pocketbook Issues</a>
-    <a href="grassroots.html">Grassroots Campaign</a>
-    <a href="twitter.html">Campaign Updates</a>
-    <a href="donate.html" class="donate-link">Donate</a>
-	<a href="contact.html">Contact</a>
-  </nav>
+  <p class="eyebrow">Est. in the spirit of 1787</p>
+  <h1>Contact & Civic Correspondence</h1>
+  <p class="tagline">
+    Self-government begins with communication. Every message strengthens the republic.
+  </p>
+  <div class="founding-seal">✦ ✦ ✦</div>
 </header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="constitution.html">The Constitution</a></li>
+    <li><a href="pocketbook.html">Structural Civic Issues</a></li>
+    <li><a href="grassroots.html">Citizen Participation</a></li>
+    <li><a href="twitter.html">Updates</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
 <main>
 
 <section>
-  <h2>Get in Touch</h2>
-  <p>
-    Representation begins with listening. If you have questions, ideas, concerns, or suggestions, I want to hear from you. 
-    Every message helps shape a campaign that reflects the priorities of the people who live in <strong>PA-3</strong>.
-  </p>
-  <p>
-    This campaign is built on transparency, steady engagement, and open communication. Your input is an essential part of that work.
-  </p>
+  <div class="container">
+    <h2>Get in Touch</h2>
+    <p>
+      Civic dialogue is essential to a functioning republic. If you have questions, ideas,
+      concerns, or structural observations, you are welcome to share them. Every message helps
+      strengthen the broader effort to restore constitutional clarity and public understanding.
+    </p>
+    <p>
+      This project is built on transparency, steady engagement, and open communication. Your
+      perspective is part of that work.
+    </p>
+  </div>
 </section>
 
-<div class="contact-grid">
+  <!-- Contact Form -->
+  <section>
+    <div class="container" style="text-align: center;">
+    <h3>Send a Message</h3>
+    <p class="subtle">
+      You may reach out directly using the form below.
+    </p>
+
+    <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" enctype="multipart/form-data">
+
+      <input type="hidden" name="access_key" value="2702eff7-2239-4a67-a23a-99ef6f7c5048">
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your full name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="email@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required placeholder="Share your thoughts or questions"></textarea>
+      </div>
+
+      <div id="result" style="display: none; padding: 10px; margin-bottom: 1rem; border-radius: 4px; text-align: center;"></div>
+
+      <button type="submit" id="submitBtn" class="button-style">Submit Message</button>
+    </form>
+	</div>
+  </section>
+
 <section>
-  <h3>Send a Message</h3>
-  <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.5rem;">
-    If you’d like to reach out directly, you can use the form below:
-  </p>
-
-  <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" enctype="multipart/form-data">
-    
-    <input type="hidden" name="access_key" value="2702eff7-2239-4a67-a23a-99ef6f7c5048">
-
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required placeholder="Your full name">
-    </div>
-    
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required placeholder="email@example.com">
-    </div>
-
-    <div class="form-group">
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="6" required placeholder="How can we better represent PA-3?"></textarea>
-    </div>
-
-<!--
-    <div class="form-group" style="margin-bottom: 1.5rem;">
-      <label for="file">Upload document</label>
-      <input type="file" id="file" name="attachment" accept="image/*,.pdf,.doc,.docx">
-    </div>
--->
-
-    <div id="result" style="display: none; padding: 10px; margin-bottom: 1rem; border-radius: 4px; text-align: center;"></div>
-
-	<button type="submit" id="submitBtn">Submit Message</button>
-  </form>
+	<div class="container">
+      <h3>Community Participation</h3>
+      <p class="subtle">You can also connect by:</p>
+      <ul class="participation-list">
+        <li>Attending community meetings</li>
+        <li>Discussing local concerns with neighbors</li>
+        <li>Volunteering with civic organizations</li>
+        <li>Sharing observations about local or structural issues</li>
+      </ul>
+      <p class="sidebar-note">
+        Every conversation strengthens civic understanding.
+      </p>
+	</div>
 </section>
 
-  <aside class="space-y-6">
-    <div class="sidebar-box">
-      <h3 style="margin-top: 0;">Community Participation</h3>
-      <p style="font-size: 0.9rem; margin-bottom: 1rem;">You can also connect by:</p>
-      <ul class="participation-list" style="font-size: 0.9rem;">
-        <li>Attending community meetings</li>
-        <li>Sharing local concerns or ideas</li>
-        <li>Volunteering with neighborhood organizations</li>
-        <li>Reaching out about issues affecting your block, school, or community</li>
-      </ul>
-      <p style="font-size: 0.85rem; font-style: italic; color: #475569; margin-top: 1rem;">
-        Every conversation strengthens the effort to build more responsive representation.
+<section>
+<div class="container">
+      <h3>Transparency & Collaboration</h3>
+      <p>
+        This project is hosted on <strong>GitHub</strong> to support open participation. Anyone may
+        review the structure, propose improvements, or contribute directly.
       </p>
-    </div>
+      <p>
+        If you notice an error or want to help refine the site, you may submit feedback through the
+        repository.
+      </p>
+	  </div>
 
-    <div class="sidebar-box" style="margin-top: 1.5rem; border-left: 4px solid #1e40af;">
-      <h3 style="margin-top: 0;">Transparency and Accountability</h3>
-      <p style="font-size: 0.9rem; line-height: 1.5;">
-        This campaign is open by design. The website is hosted on <strong>GitHub</strong> so residents can review the structure, propose improvements, and participate directly.
-      </p>
-      <p style="font-size: 0.9rem; margin-top: 1rem;">
-        If you notice an error or want to contribute to the site, you can submit feedback through the repository.
-      </p>
-    </div>
-  </aside>
-</div>
-
-<section style="margin-top: 3rem; text-align: center;">
-  <p style="font-size: 1.1rem; font-weight: 500; color: #334155;">
-    "Your voice matters. Your perspective matters. This campaign belongs to the community it represents."
+<div class="container">
+    <div class="callout">
+      <p>
+    “Your voice matters. Civic dialogue is the foundation of a durable republic.”
   </p>
+  </div>
 </section>
 
 </main>
 
 <footer>
-  <p style="font-size: 0.85rem;">
-    © Alex Schnell for PA-3 | Built openly by the community
-  </p>
+  <div class="footer-logo">Constitutional Restoration Project</div>
+  <p>Built openly by the community.</p>
   <a href="https://github.com/alexschnellpa3/alexschnellpa3.github.io/edit/main/contact.html"
      style="font-size: 0.85em; color: #666;">
     Suggest an edit to this page on GitHub
   </a>
-  <p style="font-size: 0.8rem; color: #666;">
-    Paid for by Alex Schnell for PA-3.
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="constitution.html">The Constitution</a></li>
+    <li><a href="pocketbook.html">Structural Civic Issues</a></li>
+    <li><a href="grassroots.html">Citizen Participation</a></li>
+  </ul>
+  <hr class="footer-divider" />
+  <p class="founding-quote">
+    "Educate and inform the whole mass of the people. They are the only sure
+    reliance for the preservation of our liberty."
   </p>
 </footer>
 
@@ -160,12 +146,10 @@ const result = document.getElementById('result');
 const submitBtn = document.getElementById('submitBtn');
 
 form.addEventListener('submit', function(e) {
-  e.preventDefault(); 
-  
-  // We use FormData directly to support file uploads
+  e.preventDefault();
+
   const formData = new FormData(form);
 
-  // Visual feedback
   submitBtn.disabled = true;
   submitBtn.innerText = "Sending...";
   result.style.display = "block";
@@ -174,17 +158,17 @@ form.addEventListener('submit', function(e) {
 
   fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      body: formData // Send the formData directly, not JSON
+      body: formData
   })
   .then(async (response) => {
       let json = await response.json();
       if (response.status == 200) {
-          result.style.backgroundColor = "#dcfce7"; 
+          result.style.backgroundColor = "#dcfce7";
           result.style.color = "#166534";
-          result.innerText = "Message sent! We'll be in touch soon.";
-          form.reset(); 
+          result.innerText = "Message sent! Thank you for reaching out.";
+          form.reset();
       } else {
-          result.style.backgroundColor = "#fee2e2"; 
+          result.style.backgroundColor = "#fee2e2";
           result.style.color = "#991b1b";
           result.innerText = json.message || "Something went wrong.";
       }

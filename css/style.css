@@ -1,159 +1,233 @@
-/* ============================================================
-   GLOBAL STYLES - CONGRESSIONAL
-   ============================================================ */
-
-:root {
-  /* USWDS-aligned palette */
-  --primary-navy: #112e51;
-  --accent-red: #cd2026;
-  --bg-gray: #f0f0f0;
-  --text-main: #212121;
-  --white: #ffffff;
-}
-
-* {
-  box-sizing: border-box;
-}
+/* ===== CSS RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
-  font-family: 'Public Sans', 'Source Sans Pro', sans-serif;
-  margin: 0;
-  background-color: var(--white);
-  color: var(--text-main);
-  line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Georgia', serif;
+  background: #f9f7f2;
+  color: #1a1a1a;
+  line-height: 1.75;
 }
 
-/* ============================================================
-   HEADER & NAVIGATION
-   ============================================================ */
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: var(--primary-navy);
-  color: var(--white);
-  padding: 1.2rem 5%;
-  display: flex;
-  justify-content: space-between; /* Keeps Name left, Nav right */
-  align-items: center;
-  border-bottom: 4px solid var(--accent-red);
-}
-
-header h1 {
-  margin: 0;
-  font-family: 'Merriweather', serif;
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4 {
+  font-family: 'Georgia', serif;
   font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
+  line-height: 1.25;
+  color: #1c2c1c;
 }
+h1 { font-size: clamp(2rem, 5vw, 3.25rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); margin-bottom: 0.75rem; }
+h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: #2a3e2a; }
+p  { margin-bottom: 1rem; }
+a  { color: #2e5c2e; text-decoration: underline; }
+a:hover { color: #1a3a1a; }
 
-nav {
-  display: flex;
-  align-items: center;
-}
+ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+ul li { margin-bottom: 0.4rem; }
 
-nav a {
-  color: var(--white);
-  margin-left: 1.5rem;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  transition: opacity 0.2s;
-}
-
-nav a:hover {
-  opacity: 0.8;
-}
-
-/* The "Squarespace" Action Button */
-nav a.donate-link {
-  background-color: var(--accent-red);
-  padding: 0.6rem 1.2rem;
-  border-radius: 4px; /* Squarespace often uses clean geometric buttons */
-  margin-left: 2rem;
-}
-
-/* ============================================================
-   MAIN CONTENT LAYOUT
-   ============================================================ */
-
-main {
-  width: 100%;
+/* ===== LAYOUT ===== */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 section {
-  padding: 100px 10%; /* Massive vertical breathing room */
-  max-width: 1200px;  /* Centers content but lets section bg be full width */
-  margin: 0 auto;
+  padding: 4rem 0;
 }
-
-/* Create the "alternating" look found in modern templates */
 section:nth-child(even) {
-  max-width: 100%;
-  background-color: var(--bg-gray);
+  background: #eef2ec;
+}
+section:nth-child(odd) {
+  background: #f9f7f2;
 }
 
-/* This targets the content inside even sections to keep it aligned */
-section:nth-child(even) p, 
-section:nth-child(even) h2 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-h2 {
-  font-family: 'Merriweather', serif;
-  color: var(--primary-navy);
-  font-size: 2.5rem;
-  margin-top: 0;
-  margin-bottom: 2rem;
-}
-
-p {
-  font-size: 1.15rem;
-  margin-bottom: 1.5rem;
-  max-width: 800px; /* Limits line width for better readability */
-}
-
-/* ============================================================
-   COMPONENTS
-   ============================================================ */
-
-.callout {
-  background: var(--primary-navy) !important; /* High contrast section */
-  color: var(--white);
+/* ===== HEADER ===== */
+header {
+  background: #1c2c1c;
+  color: #f9f7f2;
+  padding: 3.5rem 1.5rem 2.5rem;
   text-align: center;
-  padding: 80px 10%;
-  font-size: 1.4rem;
-  line-height: 1.4;
-  max-width: 100% !important;
+  border-bottom: 4px solid #8b7536;
 }
-
-.callout strong {
-  display: block;
-  font-family: 'Merriweather', serif;
-  font-size: 2rem;
+header .eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c4a84b;
+  margin-bottom: 0.75rem;
+}
+header h1 {
   margin-bottom: 1rem;
-  color: var(--white);
+}
+header p.tagline {
+  font-size: 1.15rem;
+  color: #c8d8c8;
+  max-width: 680px;
+  margin: 0 auto;
+  font-style: italic;
+}
+header .founding-seal {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  opacity: 0.55;
+  letter-spacing: 0.5rem;
 }
 
-/* Hero-style Image */
+/* ===== NAV ===== */
+nav {
+  background: #2a3e2a;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav ul li a {
+  display: block;
+  padding: 0.85rem 1.1rem;
+  color: #d8e8d8;
+  text-decoration: none;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, color 0.2s;
+}
+nav ul li a:hover {
+  background: #4a6e4a;
+  color: #ffffff;
+}
+
+/* ===== HERO BAND ===== */
+.hero-band {
+  background: #8b7536;
+  color: #fff9e8;
+  text-align: center;
+  padding: 1.25rem 1.5rem;
+  font-size: 1rem;
+  font-style: italic;
+}
+.hero-band strong { color: #fff3c0; }
+
+/* ===== CALLOUT ===== */
+.callout {
+  border-left: 5px solid #8b7536;
+  background: #fffdf0;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 6px 6px 0;
+}
+.callout p {
+  font-size: 1.1rem;
+  font-style: italic;
+}
+.callout cite {
+  font-size: 0.85rem;
+  color: #8b7536;
+  font-weight: bold;
+}
+
+/* ===== CARD GRID ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.card {
+  background: #ffffff;
+  border: 1px solid #d4d0c4;
+  border-top: 4px solid #2a3e2a;
+  padding: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* ===== FAILURE TABLE ===== */
+.failure-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.failure-table thead tr {
+  background: #1c2c1c;
+  color: #f9f7f2;
+}
+
+.failure-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-family: 'Georgia', serif;
+}
+
+.failure-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #d4d0c4;
+  vertical-align: top;
+}
+
+.failure-table tbody tr:nth-child(even) {
+  background: #f2ede4;
+}
+
+.failure-table tbody tr:hover {
+  background: #e8f0e0;
+}
+
+/* ===== BADGES ===== */
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-high {
+  background: #8b2020;
+  color: #fff;
+}
+
+.badge-med {
+  background: #8b7536;
+  color: #fff;
+}
+
+.badge-struc {
+  background: #2a3e2a;
+  color: #fff;
+}
+
+/* ===== ORNAMENT ===== */
+.ornament {
+  text-align: center;
+  margin: 2rem 0;
+  color: #8b7536;
+  font-size: 1.25rem;
+  letter-spacing: 0.5rem;
+  opacity: 0.6;
+}
+
+/* ===== IMAGES ===== */
 .content-image {
   display: block;
   width: 100%;
   max-width: 600px;
-  height: auto;
   margin: 0 auto 3rem;
   border-radius: 8px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-/* Reusable side-by-side layout */
+/* ===== FLEX LAYOUT ===== */
 .schnell-flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -161,82 +235,60 @@ p {
   align-items: flex-start;
   margin-bottom: 2rem;
 }
-
 .schnell-flex-text {
   flex: 1;
-  min-width: 300px; /* Forces stack on mobile */
+  min-width: 300px;
 }
-
 .schnell-flex-media {
-  flex: 0 0 350px; /* Fixed width on desktop */
+  flex: 0 0 350px;
   max-width: 100%;
 }
-
-/* Centers the media/tweet when it stacks on mobile */
 @media (max-width: 600px) {
   .schnell-flex-media {
     margin: 0 auto;
   }
 }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
-
+/* ===== FOOTER ===== */
 footer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centers items horizontally in flex */
-  justify-content: center;
-  text-align: center; /* Centers text lines */
-  padding: 4rem 1rem;
-  background: #111;
-  color: #fff;
+  background: #111811;
+  color: #9aaa9a;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-top: 4px solid #8b7536;
 }
-
+footer .footer-logo {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
 footer p {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%; /* Overrides the 800px limit from your general 'p' tag */
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
 }
-
-footer a {
-  color: #fff;
+footer .footer-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 1rem 0;
+}
+footer .footer-links a {
+  color: #9aaa9a;
   text-decoration: none;
-  margin: 0 10px; /* Gives links space if they are side-by-side */
-  border-bottom: 2px solid rgba(160, 196, 255, 0.3); /* Adds a blue line underneath without touching the text */
-  padding-bottom: 2px;
-  transition: color 0.2s;
 }
-
-footer a:hover {
-  border-bottom-color: #a0c4ff;
-  background: rgba(160, 196, 255, 0.1); /* Very subtle blue highlight */
-  color: var(--white);
+footer .footer-links a:hover {
+  color: #c4a84b;
 }
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-
-@media (max-width: 1024px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  nav {
-    margin-top: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav a {
-    margin: 0.5rem;
-  }
-  
-  section {
-    padding: 60px 5%;
-  }
+footer .footer-divider {
+  border-top: 1px solid #2a3a2a;
+  margin: 1.5rem auto;
+  max-width: 400px;
+}
+footer .founding-quote {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #6a7a6a;
+  max-width: 600px;
+  margin: 0 auto;
 }
